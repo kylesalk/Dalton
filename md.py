@@ -3,9 +3,12 @@
 from libdalton import fileio
 from libdalton import simulate
 
-if __name__=='__main__':
-    input_file_name = fileio.validate_input(__file__)
-    
-    simulation = simulate.MolecularDynamics(input_file_name)
-    
+
+def run(input_file):
+    simulation = simulate.MolecularDynamics(input_file)
     simulation.run()
+
+
+if __name__ == '__main__':
+    input_file_name = fileio.validate_input(__file__)
+    run(input_file_name)
